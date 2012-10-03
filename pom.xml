@@ -60,6 +60,11 @@
     </scm>
 
     <distributionManagement>
+        <snapshotRepository>
+            <id>${snapshot.deploy.id}</id>
+            <name>${snapshot.deploy.name}</name>
+            <url>${snapshot.deploy.url}</url>
+        </snapshotRepository>
         <site>
             <id>${site.staging.id}</id>
             <url>${site.staging.url}</url>
@@ -79,7 +84,7 @@
             <post>dev@chemistry.apache.org</post>
             <archive>
                 http://mail-archives.apache.org/mod_mbox/chemistry-dev/
-              </archive>
+            </archive>
         </mailingList>
         <mailingList>
             <name>Chemistry Source Control List</name>
@@ -166,7 +171,7 @@
                 <role>committer</role>
             </roles>
         </developer>
-		<developer>
+        <developer>
             <name>Jean Marie Pascal</name>
             <id>jmpascal</id>
             <roles>
@@ -201,9 +206,9 @@
         <module>chemistry-opencmis-osgi/chemistry-opencmis-osgi-client</module>
         <module>chemistry-opencmis-osgi/chemistry-opencmis-osgi-server</module>
         <!-- <module>chemistry-opencmis-workbench/chemistry-opencmis-workbench-webstart</module> -->
-		<module>chemistry-opencmis-android/chemistry-opencmis-android-client</module>
+        <module>chemistry-opencmis-android/chemistry-opencmis-android-client</module>
         <module>chemistry-opencmis-dist</module>
-  </modules>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -217,7 +222,7 @@
             | By default site is deployed to:
             | https://svn.apache.org/repos/asf/chemistry/site/trunk/content/java/${site.label}/maven/ 
             | where site.label = project.version 
-            
+
             | For details/changes see http://chemistry.apache.org/java/documentation-lifecycle.html
             |
             | Note: Site label (or any other property like site.staging.url) can be overriden on the command line to deploy to distinct location during site development
@@ -404,11 +409,11 @@
             </plugin>
         </plugins>
         <extensions>
-             <extension>
-                 <groupId>com.google.code.maven-svn-wagon</groupId>
-                 <artifactId>maven-svn-wagon</artifactId>
-                 <version>1.4</version>
-             </extension>
+            <extension>
+                <groupId>com.google.code.maven-svn-wagon</groupId>
+                <artifactId>maven-svn-wagon</artifactId>
+                <version>1.4</version>
+            </extension>
         </extensions>
     </build>
 
@@ -477,47 +482,47 @@
                 <version>2.0.1</version>
             </plugin>
             <plugin>
-              <groupId>org.apache.maven.plugins</groupId>
-              <artifactId>maven-javadoc-plugin</artifactId>
-              <version>2.8.1</version>
-              <inherited>false</inherited>
-              <reportSets>
-                <reportSet>
-                  <id>aggregate</id>
-                  <reports>
-                    <report>aggregate</report>
-                  </reports>
-                </reportSet>
-              </reportSets>
-              <configuration>
-                  <doctitle>Apache Chemistry OpenCMIS ${project.version}</doctitle>
-                  <windowtitle>Apache Chemistry OpenCMIS ${project.version}</windowtitle>
-                  <!-- TODO: Update this for new packages -->
-                  <groups>
-                      <group>
-                          <title>OpenCMIS Client API</title>
-                          <packages>org.apache.chemistry.opencmis.client.api:org.apache.chemistry.opencmis.client.util</packages>
-                      </group>
-                      <group>
-                          <title>OpenCMIS Commons API</title>
-                          <packages>org.apache.chemistry.opencmis.commons:org.apache.chemistry.opencmis.commons.*</packages>
-                      </group>
-                      <group>
-                          <title>OpenCMIS Bindings SPI</title>
-                          <packages>org.apache.chemistry.opencmis.client.bindings</packages>
-                      </group>
-                      <group>
-                          <title>OpenCMIS Server</title>
-                          <packages>org.apache.chemistry.opencmis.commons.server:org.apache.chemistry.opencmis.commons.impl.server:org.apache.chemistry.opencmis.server.support:org.apache.chemistry.opencmis.server.support.query:org.apache.chemistry.opencmis.server.filter:org.apache.chemistry.opencmis.server.shared</packages>
-                      </group>
-                      <group>
-                          <title>OpenCMIS Bridge</title>
-                          <packages>org.apache.chemistry.opencmis.bridge*</packages>
-                      </group>                 
-                      <group>
-                          <title>OpenCMIS TCK</title>
-                          <packages>org.apache.chemistry.opencmis.tck*</packages>
-                      </group>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.8.1</version>
+                <inherited>false</inherited>
+                <reportSets>
+                    <reportSet>
+                        <id>aggregate</id>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+                <configuration>
+                    <doctitle>Apache Chemistry OpenCMIS ${project.version}</doctitle>
+                    <windowtitle>Apache Chemistry OpenCMIS ${project.version}</windowtitle>
+                    <!-- TODO: Update this for new packages -->
+                    <groups>
+                        <group>
+                            <title>OpenCMIS Client API</title>
+                            <packages>org.apache.chemistry.opencmis.client.api:org.apache.chemistry.opencmis.client.util</packages>
+                        </group>
+                        <group>
+                            <title>OpenCMIS Commons API</title>
+                            <packages>org.apache.chemistry.opencmis.commons:org.apache.chemistry.opencmis.commons.*</packages>
+                        </group>
+                        <group>
+                            <title>OpenCMIS Bindings SPI</title>
+                            <packages>org.apache.chemistry.opencmis.client.bindings</packages>
+                        </group>
+                        <group>
+                            <title>OpenCMIS Server</title>
+                            <packages>org.apache.chemistry.opencmis.commons.server:org.apache.chemistry.opencmis.commons.impl.server:org.apache.chemistry.opencmis.server.support:org.apache.chemistry.opencmis.server.support.query:org.apache.chemistry.opencmis.server.filter:org.apache.chemistry.opencmis.server.shared</packages>
+                        </group>
+                        <group>
+                            <title>OpenCMIS Bridge</title>
+                            <packages>org.apache.chemistry.opencmis.bridge*</packages>
+                        </group>                 
+                        <group>
+                            <title>OpenCMIS TCK</title>
+                            <packages>org.apache.chemistry.opencmis.tck*</packages>
+                        </group>
                     </groups>
                     <excludePackageNames>org.apache.chemistry.opencmis.commons.impl:org.apache.chemistry.opencmis.commons.impl.dataobjects:org.apache.chemistry.opencmis.client.runtime:org.apache.chemistry.opencmis.client.runtime.*:org.apache.chemistry.opencmis.commons.impl.jaxb:org.apache.chemistry.opencmis.client.bindings.impl:org.apache.chemistry.opencmis.client.bindings.cache:org.apache.chemistry.opencmis.client.bindings.spi:org.apache.chemistry.opencmis.server.impl:org.apache.chemistry.opencmis.fit:org.apache.chemistry.opencmis.util.repository:org.apache.chemistry.opencmis.fileshare:org.apache.chemistry.opencmis.fileshare:org.apache.chemistry.opencmis.inmemory:org.apache.chemistry.opencmis.fileshare:org.apache.chemistry.opencmis.jcr:org.apache.chemistry.opencmis.browser:org.apache.chemistry.opencmis.workbench:org.apache.chemistry.opencmis.commander:org.apache.chemistry.opencmis.client.osgi</excludePackageNames>
                 </configuration>

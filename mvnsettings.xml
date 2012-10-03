@@ -53,6 +53,11 @@
                     <url>https://artifactory.fritz-elfert.de/artifactory/plugins-snapshot</url>
                 </pluginRepository>
             </pluginRepositories>
+            <properties>
+                <snapshot.deploy.id>artifactory.fritz-elfert.de</snapshot.deploy.id>
+                <snapshot.deploy.name>artifactory.fritz-elfert.de-snapshots</snapshot.deploy.name>
+                <snapshot.deploy.url>https://artifactory.fritz-elfert.de/artifactory/libs-snapshot-local</snapshot.deploy.url>
+            </properties>
             <id>artifactory</id>
         </profile>
     </profiles>
