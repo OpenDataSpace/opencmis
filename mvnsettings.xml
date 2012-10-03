@@ -10,6 +10,15 @@
                 -Djavax.net.ssl.keyStorePassword=YourCertPassword \
                 -s mvnsettings.xml YourMavenGoal
     -->
+    <mirrors>
+        <mirror>
+            <mirrorOf>*</mirrorOf>
+            <name>remote-repos</name>
+            <url>https://artifactory.fritz-elfert.de/artifactory/remote-repos</url>
+            <id>remote-repos</id>
+        </mirror>
+    </mirrors>
+
     <profiles>
         <profile>
             <repositories>
