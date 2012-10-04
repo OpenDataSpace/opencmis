@@ -268,6 +268,23 @@
         </pluginManagement>
         <plugins>
             <plugin>
+                <groupId>com.soebes.maven.plugins.dmg</groupId>
+                <artifactId>doxygen-maven-plugin</artifactId>
+                <version>1.0.1</version>
+                <configuration>
+                    <alphabeticalIndex>true</alphabeticalIndex>
+                    <generateHtml>true</generateHtml>
+                    <inputDirectory>${basedir}/src/main/java</inputDirectory>
+                    <filePatterns>*.java</filePatterns>
+                    <recursive>true</recursive>
+                    <optimizeOutputJava>true</optimizeOutputJava>
+                    <referencedByRelation>true</referencedByRelation>
+                    <builtinStlSupport>true</builtinStlSupport>
+                    <projectName>"${project.name}"</projectName>
+                    <projectNumber>${project.version}</projectNumber>
+                </configuration>
+            </plugin>
+            <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>buildnumber-maven-plugin</artifactId>
                 <version>1.0</version>
